@@ -1,0 +1,120 @@
+<html>
+     <head>
+
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<title> </title>
+
+		<script type="text/javascript">
+			function verificar()
+				{
+				var login, senha;
+
+						
+					senha = Login.txtsenha.value;
+					login = Login.txtlogin.value;
+ 					
+					if (login.length < 1)
+				  	 {
+					  alert("Preencha o login corretamente!");
+					  Login.txtlogin.style.background="yellow";
+					  Login.txtlogin.focus();
+					  return false;
+					}else{
+												Login.txtlogin.style.background="white";
+						}
+						
+				   if ( senha.length < 1)  
+				   {
+					  alert("Preencha a senha corretamente!");
+					  Login.txtsenha.style.background="yellow";
+					  Login.txtsenha.focus();
+					  return false;
+				   }else{
+					Login.txtsenha.style.background="white";
+						}
+
+						Login.submit();
+						return true;
+						
+				}
+				
+			</script>
+
+    <link rel="shortcut icon" href="images/icone.png">
+    <link type="text/css" rel="stylesheet" href="estilo.css" />
+    <title> </title>
+     </head>
+
+    <body>
+
+
+        <div id="tudo">
+
+            <div id="banner">
+                <img src="imagesbanner1.png">
+            </div>
+
+            <div id="inicio">
+                <h1 class="texto"> <a href="index.html"> Início </a></h1>
+            </div>
+
+            <div id="perfil">
+                <h1 class="texto"> <a href="meu_perfil.php"> Perfil </a></h1>
+            </div>
+
+            <div id="servicos">
+                <h1 class="texto"> <a href="servicos.html"> Sobre Nós </a></h1>
+            </div>
+
+            <div id="contato">
+                <h1 class="texto"><a href="contato.html"> Contato </a></h1>
+            </div>
+
+
+
+            <form name="Login" method="post" action="login_verificar.php">
+
+		<br>
+		<br>
+
+                <h1 id="motoboy"> Motoboy Online </h1>
+
+                <table id="tabela1">
+
+                    <tr>
+		
+                        <td class="nomes"> Usuário:</td>
+                        <td><input type="text" name="txtlogin" placeholder="Digite seu nome de usuario" required> </td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="nomes">Senha:</td>
+                        <td><input type="password" name="txtsenha" placeholder="Digite sua senha" required></td>
+
+                    </tr>
+
+
+                </table>
+                <br />
+
+
+                <div id="botao" class="botaoEntrar">
+                    <input type="button" value="Entrar" onclick="verificar()">
+                </div>
+
+                <div id="cadastro">
+                    <a href="cadastro.html"> <img src="imagescadastre-se.png"></a>
+                </div>
+            </form>
+        </div>
+        
+       
+       
+</body>
+
+
+
+
+</html>

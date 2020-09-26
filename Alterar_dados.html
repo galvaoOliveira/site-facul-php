@@ -1,0 +1,245 @@
+<?php
+
+include("conexao.php");
+
+
+?>
+
+<html>
+	<head>
+		<title>Faça seu cadastro!</title>
+		
+			<script type="text/javascript">
+				function verificar()
+				{
+				   
+				   var nome, usuario, senha, telefone, celular, email, rg, cpf, rua, numero, bairro;
+
+				   nome = cadastro.txtname.value;
+
+				   if ( nome.length < 3)  
+				   {
+					  alert("Preencha o campo nome corretamente!");
+					  cadastro.txtname.style.background="yellow";
+					  cadastro.txtname.focus();
+					  return false;
+				   }else{
+						cadastro.txtname.style.background="white";
+						}
+				   
+				   usuario = cadastro.txtusuario.value;
+				   
+				   if (usuario.length < 5)
+				   {
+					  alert("Preencha o campo usuÃ¡rio corretamente!");
+					  cadastro.txtusuario.style.background="yellow";
+					  cadastro.txtusuario.focus();
+					  return false;
+				   }else{
+						cadastro.txtusuario.style.background="white"
+						}
+						
+				   senha = cadastro.txtsenha.value;
+				   
+				   if (senha.length < 5)
+				   {
+					  alert("Preencha a senha corretamente!");
+					  cadastro.txtsenha.style.background="yellow";
+					  cadastro.txtsenha.focus();
+					  return false;
+				   }else{
+						cadastro.txtsenha.style.background="white"
+						}
+
+				   telefone = cadastro.txttelefone.value;
+				   
+				   if (telefone.length < 11)
+				   {
+					  alert("Preencha o campo telefone corretamente!");
+					  cadastro.txttelefone.style.background="yellow";
+					  cadastro.txttelefone.focus();
+					  return false;
+				   }else{
+						cadastro.txttelefone.style.background="white"
+						}
+
+				   celular = cadastro.txtcelular.value;
+				   
+				   if (celular.length < 11)
+				   {
+					  alert("Preencha o campo celular corretamente!");
+					  cadastro.txtcelular.style.background="yellow";
+					  cadastro.txtcelular.focus();
+					  return false;
+				   }else{
+						cadastro.txtcelular.style.background="white"
+						}
+					
+				   email = cadastro.txtemail.value;
+				   
+				   if  (email.indexOf("@")< 0 )
+				   {
+					  alert("Preencha o campo E-mail corretamente!");
+					  cadastro.txtemail.style.background="yellow";
+					  cadastro.txtemail.focus();
+					  return false;
+				   }else{
+						cadastro.txtemail.style.background="white"
+						}
+
+				   rg = cadastro.txtrg.value;
+				   
+				   if (rg.length < 9 ) 
+				   {
+					  alert("Preencha o campo RG corretamente!");
+					  cadastro.txtrg.style.background="yellow";
+					  cadastro.txtrg.focus();
+					  return false;
+				   }else{
+						cadastro.txtrg.style.background="white"
+						}
+
+				   cpf = cadastro.txtcpf.value;
+				   
+				   if (cpf.length != 9)
+				   {
+					  alert("Preencha o campo CPF corretamente!");
+					  cadastro.txtcpf.style.background="yellow";
+					  cadastro.txtcpf.focus();
+					  return false;
+				   }else{
+						cadastro.txtcpf.style.background="white"
+						}
+
+					
+				   rua = cadastro.txtrua.value;
+				   
+				   if (rua.length < 1)
+				   {
+					  alert("Preencha o campo Rua corretamente!");
+					  cadastro.txtrua.style.background="yellow";
+					  cadastro.txtrua.focus();
+					  return false;
+				   }else{
+						cadastro.txtrua.style.background="white"
+						}
+
+				   numero = cadastro.txtnumero.value;
+				   
+				   if (isNaN(numero) || numero.length < 2)
+				   {
+					  alert("Preencha o campo NÃºmero corretamente!");
+					  cadastro.txtnumero.style.background="yellow";
+					  cadastro.txtnumero.focus();
+					  return false;
+				   }else{
+						cadastro.txtnumero.style.background="white"
+						}
+
+				   bairro = cadastro.txtbairro.value;
+				   
+				   if (bairro.length < 1)
+				   {
+					  alert("Preencha o campo Bairro corretamente!");
+					  cadastro.txtbairro.style.background="yellow";
+					  cadastro.txtbairro.focus();
+					  return false;
+				   }else{
+						cadastro.txtbairro.style.background="white"
+						}
+					
+				   
+				   cadastro.submit(); 
+				   alert("Cadastro realizado!");
+				   return true;
+
+				}
+			</script>
+
+         <link type="text/css" rel="stylesheet" href="estilo.css" />
+    <link rel="shortcut icon" href="images/icone.png">
+
+	</head>
+
+	<body>
+
+	<form name="cadastro" action="grava_cadastro.php" method="post">
+
+	<div id="banner">
+                <img src="imagesbanner1.png">
+            </div>
+
+            <div id="inicio">
+                <h1 class="texto"> <a href="index.html"> Início </a></h1>
+            </div>
+
+            <div id="perfil">
+                <h1 class="texto"> <a href="meu_perfil.php"> Perfil </a></h1>
+            </div>
+
+            <div id="servicos">
+                <h1 class="texto"> <a href="servicos.html"> Sobre Nós </a></h1>
+            </div>
+
+            <div id="contato">
+                <h1 class="texto"><a href="contato.html"> Contato </a></h1>
+            </div>
+
+            <h2 class="texto2"> Alterar Cadastro: </h2>
+            <form name="cadastro" action="grava_cadastro.jsp" method="post">
+                <table id="tabela5">
+                    <tr>
+                        <tr><td class="nomes">Usuário:</td></tr>
+		<tr><td colspan="3"><input type="text" name="txtusuario" size="65" placeholder="Escolha um nome de usuário" required></td></tr> 
+
+		<tr><td class="nomes">Nome:</td><td class="nomes">Sobrenome:</td></tr>
+		<td><input type="text" name="txtname" size="30" placeholder="Nome" required></td>
+		<td><input type="text" name="txtsobrenome" size="30" placeholder="Sobrenome" required></td>
+
+		<tr><td class="nomes">Senha:</td><td class="nomes">Confirme sua Senha:</td></tr>
+		<td><input type="password" name="txtsenha" size="30" placeholder="Escolha uma senha" required></td>
+		<td><input type="password" name="txtconfsenha" size="30" placeholder="Confirme sua senha" required></td>
+
+		<tr><td class="nomes">Telefone:</td><td class="nomes">Celular:</td></tr>
+		<td><input type="text" name="txttelefone" size="30" placeholder="(DDD) 0000-0000" required></td> 
+		<td><input type="text" name="txtcelular" size="30" placeholder="(DDD) 90000-0000" required></td> 
+
+		<tr><td class="nomes">E-mail:</td></tr>
+		<tr><td colspan="3"><input type="text" name="txtemail" size="65" placeholder="Informe seu e-mail" required></td></tr> 
+
+		<tr><td class="nomes">RG:</td><td class="nomes">CPF:</td></tr>
+		<td><input type="text" name="txtrg" size="30" placeholder="Número do seu RG" required></td>
+		<td><input type="text" name="txtcpf" size="30" placeholder="Número do seu CPF" required></td>
+
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+
+		<tr><td class="nomes"><h4>Endereço:</h4></td></tr>	
+
+		<tr><td class="nomes">Rua:</td></tr>
+		<tr><td colspan="3"><input type="text" name="txtrua" size="65" placeholder="Informe o nome da sua rua" required></td></tr>
+		<tr><td class="nomes">Número:</td><td class="nomes">Bairro:</td></tr>
+		<td><input type="text" name="txtnumero" size="30" placeholder="Informe o número de seu residência" required></td>
+		<td><input type="text" name="txtbairro" size="30" placeholder="Informa o bairro" required></td>
+
+                </table>
+                <div class="botao2">
+                    <input type="button" value="Alterar" onClick="verificar()"></td>
+                    <input type="reset" value="Limpar">
+                </div>
+
+
+	</form>
+
+	</body>
+</html>
+<?php
+}
+?>	
